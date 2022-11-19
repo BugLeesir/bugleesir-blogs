@@ -16,13 +16,13 @@
 
 ## => Site Settings
 ##############################
-text_skin: chocolate # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+text_skin: forest # "forest" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night-blue # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : My Temp Blog
+title   : Lee's Blogs
 description: > # this means to ignore newlines until "Language & timezone"
-  This is my blog.
+  Java is the best programming language in the world (
 
 
 ## => Language and Timezone
