@@ -21,9 +21,8 @@ highlight_theme: tomorrow-night-bright # "default" (default), "tomorrow", "tomor
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : Lee's Blogs
-description: > # this means to ignore newlines until "Language & timezone"
-  Java is the best programming language in the world (
-
+description: Easy cv # this means to ignore newlines until "Language & timezone"
+  
 
 ## => Language and Timezone
 ##############################
@@ -118,11 +117,11 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: custom # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: disqus # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
   disqus:
-    shortname: # the Disqus shortname for the site
+    shortname: bugleesir# the Disqus shortname for the site
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
