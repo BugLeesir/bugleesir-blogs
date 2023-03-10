@@ -171,3 +171,33 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<drive>:][<path>][<filename
 /d将 attrib 和任何命令行选项应用于目录。
 /l将 attrib 和任何命令行选项应用于符号链接，而不是符号链接的目标。
 ```
+
+### Part3---变量
+
+* set
+
+官方介绍：显示、设置或删除cmd.exe环境变量。 如果在不使用参数的情况下使用， 则 set 将显示当前环境变量设置。此命令需要默认启用的命令扩展。set 命令还可以使用不同的参数从 Windows 恢复控制台运行。
+
+简介：set命令可以用来获取，设置变量，所以可以运用这个命令在批处理脚本中使用变量。
+
+语法：
+
+```bat
+set [<variable>=[<string>]]
+set [/p] <variable>=[<promptString>]
+set /a <variable>=<expression>
+
+<variable>指定要设置或修改的环境变量。
+<string>指定要与指定的环境变量关联的字符串。
+/p将 的值 <variable> 设置为用户输入的输入行。
+<promptstring>指定提示用户输入的消息。 此参数必须与 /p 参数一起使用。
+/a将 设置为 <string> 计算的数字表达式。
+<expression>指定数值表达式。
+```
+
+#### 用法1---不带参数的set，获取环境变量
+
+```shell
+C:\Users\10078>set java_home
+JAVA_HOME=D:\tools\Java\jdk-18.0.1.1
+```
