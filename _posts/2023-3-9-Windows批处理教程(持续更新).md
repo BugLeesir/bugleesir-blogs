@@ -98,7 +98,7 @@ move [{/y|-y}] [<source>] [<target>]
 
  语法:
 
-```CMD
+```bat
 del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 <names>指定一个或多个文件或目录的列表。 通配符可用于删除多个文件。 如果指定了目录，则将删除该目录中的所有文件。
