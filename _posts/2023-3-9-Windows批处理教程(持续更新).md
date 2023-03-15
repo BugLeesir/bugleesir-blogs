@@ -257,4 +257,30 @@ C:\Users\10078>echo %test:~-3%
 ld"
 ```
 
-#### 用法7---10.for %i/%%i in (set) do ,for循环,在文件（bat或者cmd）中需要将%i使用%%i来代替，%%i不会出现变量扩展的问题，在循环中同步更新%%i的值
+#### 用法7---10.for %i/%%i in (command1) do (command2) ,for循环
+
+在文件（bat或者cmd）中需要将%i使用%%i来代替，%%i不会出现变量扩展的问题，在循环中同步更新%%i的值
+
+for、in和do是for语句的关键字，它们三个缺一不可；
+
+%%I是for语句中对形式变量的引用，即使变量l在do后的语句中没有参与语句的执行，也是必须出现的；
+
+in之后，do之前的括号不能省略；
+
+command1表示字符串或变量，command2表示字符串、变量或命令语句；
+
+```shell
+C:\Users\10078>set test="hello world batch"
+C:\Users\10078>for %I in (%test%) do echo %I
+C:\Users\10078>echo "hello world batch"
+"hello world batch"
+C:\Users\10078>set test2="What a beautiful world!"
+C:\Users\10078>set test3="sword new new"
+C:\Users\10078>for %I in (%test%,%test2%,%test3%) do echo %I
+C:\Users\10078>echo "hello world batch"
+"hello world batch"
+C:\Users\10078>echo "What a beautiful world!"
+"What a beautiful world!"
+C:\Users\10078>echo "sword new new"
+"sword new new"
+```
