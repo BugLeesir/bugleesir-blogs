@@ -1,0 +1,29 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "172.25.109.0",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Philo",
+            "database": "world",
+            "username": "common user",
+            "connectionTimeout": 10
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "bugleesir",
+            "username": "root",
+            "database": "world"
+        }
+    ]
+}

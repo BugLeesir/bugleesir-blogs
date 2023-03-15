@@ -201,3 +201,60 @@ set /a <variable>=<expression>
 C:\Users\10078>set java_home
 JAVA_HOME=D:\tools\Java\jdk-18.0.1.1
 ```
+
+#### 用法2---使用‘=’为变量赋值
+
+```shell
+C:\Users\10078>set temp_var="hihao"
+C:\Users\10078>echo %temp_var%
+"hihao"
+```
+
+#### 用法3---使用带'/a'参数的set命令，执行数字表达式并赋值给变量
+
+```shell
+C:\Users\10078>set /a temp_var=11*14
+154
+C:\Users\10078>echo %temp_var%
+154
+```
+
+![error](https://raw.githubusercontent.com/BugLeesir/image_host01/main/blogs_img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-10%20164539.gif)
+
+#### 用法4---适用带'/p'参数的set命令，变量将通过用户输入接收值，提示作为提示信息输出
+
+```shell
+C:\Users\10078>set /p test=请输入信息
+请输入信息777
+C:\Users\10078>echo %test%
+777
+```
+
+#### 用法5---%var:str1=str2%表示将变量的值中包含的str1使用str2替换后获得的变量（原变量不发生变化）
+
+```shell
+C:\Users\10078>set test="hello my best world !"
+C:\Users\10078>echo %test%
+"hello my best world !"
+C:\Users\10078>echo %test:best=beautiful%
+"hello my beautiful world !"
+C:\Users\10078>echo %test:hello=beautiful%
+"beautiful my best world !"
+C:\Users\10078>set test2=%test:best=beautiful%
+C:\Users\10078>echo %test2%
+"hello my beautiful world !"
+```
+
+#### 用法6---%var:~start[,length]%表示从start出开始（包括start，第一个计数为0)，取length长的子串，如果length省略，则表示取到串尾，start可以为负数，最后一个字符为-1，从后往前依次为-2、-3、-4……
+
+```shell
+C:\Users\10078>set test="hello world"
+C:\Users\10078>echo %test:~2,5%
+ello
+C:\Users\10078>echo %test:~2%
+ello world"
+C:\Users\10078>echo %test:~-3%
+ld"
+```
+
+#### 用法7---10.for %i/%%i in (set) do ,for循环,在文件（bat或者cmd）中需要将%i使用%%i来代替，%%i不会出现变量扩展的问题，在循环中同步更新%%i的值
