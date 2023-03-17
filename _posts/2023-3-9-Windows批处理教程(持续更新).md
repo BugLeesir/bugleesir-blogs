@@ -45,6 +45,22 @@ pause
 
 ### Part2---常用命令
 
+* (command)/?
+
+官方介绍：在 cmd 窗口中显示帮助文本。
+
+语法：
+
+```shell
+C:\Users\10078>echo /?
+显示消息，或者启用或关闭命令回显。
+
+  ECHO [ON | OFF]
+  ECHO [message]
+
+若要显示当前回显设置，请键入不带参数的 ECHO。
+```
+
 * echo
   
 官方介绍：显示消息或者打开或关闭命令回显功能。 如果不结合任何参数使用，echo 会显示当前回显设置。
@@ -257,17 +273,21 @@ C:\Users\10078>echo %test:~-3%
 ld"
 ```
 
-#### 用法7---10.for %i/%%i in (command1) do (command2) ,for循环
+#### 用法7---for ```<parameter>``` %i/%%i in (command1) do (command2) ,for循环
 
 在文件（bat或者cmd）中需要将%i使用%%i来代替，%%i不会出现变量扩展的问题，在循环中同步更新%%i的值
 
 for、in和do是for语句的关键字，它们三个缺一不可；
+
+parameter是for语句的参数，有'/d','/r','/l','/f',也可以不使用该参数
 
 %%I是for语句中对形式变量的引用，即使变量l在do后的语句中没有参与语句的执行，也是必须出现的；
 
 in之后，do之前的括号不能省略；
 
 command1表示字符串或变量，command2表示字符串、变量或命令语句；
+
+##### 1，不带参数的for语句
 
 ```shell
 C:\Users\10078>set test="hello world batch"
@@ -283,4 +303,28 @@ C:\Users\10078>echo "What a beautiful world!"
 "What a beautiful world!"
 C:\Users\10078>echo "sword new new"
 "sword new new"
+```
+
+##### 2，带参数'/d'的for语句---处理文件夹
+
+先创建一个目录
+
+```shell
+
+```
+
+#### 用法8---setlocal [Enable|Disable]DelayedExpansion
+
+### Part4---常用技巧
+
+#### 1,获取管理员权限
+
+```bat
+PUSHD %~DP0 & cd /d "%~dp0"
+%1 %2
+mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runas","","runas",1)(window.close)&goto :eof
+:runas
+  
+::填写自己的脚本
+
 ```
