@@ -328,3 +328,6 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runa
 ::填写自己的脚本
 
 ```
+
+#### 2，符号拓展
+
