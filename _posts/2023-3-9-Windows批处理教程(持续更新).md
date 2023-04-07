@@ -310,12 +310,58 @@ C:\Users\10078>echo "sword new new"
 先创建一个目录
 
 ```shell
+update---
 
 ```
 
 #### 用法8---setlocal [Enable|Disable]DelayedExpansion
 
-### Part4---常用技巧
+### Part4---符号拓展
+
+扩充变量语法详解：
+
+```shell
+选项语法 :
+~I - 删除任何引号 (") ，扩充 %I
+%~fI - 将 %I 扩充到一个完全合格的路径名
+%~dI - 仅将 %I 扩充到一个驱动器号
+%~pI - 仅将 %I 扩充到一个路径
+%~nI - 仅将 %I 扩充到一个文件名
+%~xI - 仅将 %I 扩充到一个文件扩展名
+%~sI - 扩充的路径只含有短名
+%~aI - 将 %I 扩充到文件的文件属性
+%~tI - 将 %I 扩充到文件的日期 / 时间
+%~zI - 将 %I 扩充到文件的大小
+%~$PATH:I - 查找列在路径环境变量的目录，并将 %I 扩充
+            到找到的第一个完全合格的名称。如果环境变量名
+            未被定义，或者没有找到文件，此组合键会扩充到
+            空字符串
+```
+
+注：若要获取本批处理文件的路径作符号拓展则将%I替换为%0,若在CMD的for循环中则为%I,批处理中的for循环则为%%I
+
+可以组合修饰符来得到多重结果 :
+
+```CMD
+C:\Users\10078>set /p var1=
+C:\Users\10078\Desktop\MySQL.lnk
+
+C:\Users\10078>echo %var1%
+C:\Users\10078\Desktop\MySQL.lnk
+
+C:\Users\10078>for %I in (%var1%) do echo %~dpI         //拓展到驱动器号加路径
+
+C:\Users\10078>echo C:\Users\10078\Desktop\
+C:\Users\10078\Desktop\
+
+C:\Users\10078>for %I in (%var1%) do echo %~nxI         //拓展到文件名和拓展名
+
+C:\Users\10078>echo MySQL.lnk
+MySQL.lnk
+
+```
+
+### Part5---常用技巧
 
 #### 1,获取管理员权限
 
@@ -328,6 +374,3 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runa
 ::填写自己的脚本
 
 ```
-
-#### 2，符号拓展
-
