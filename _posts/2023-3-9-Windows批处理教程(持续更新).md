@@ -307,10 +307,50 @@ C:\Users\10078>echo "sword new new"
 
 ##### 2，带参数'/d'的for语句---处理文件夹
 
-先创建一个目录
+遍历目录
 
 ```shell
-update---
+D:\MyCodes\test>tree
+卷 wnist 的文件夹 PATH 列表
+卷序列号为 74F6-FE76
+D:.
+├─testdir01
+│  └─test01dir
+├─testdir02
+└─testdir03
+    └─test03dir
+        └─hahah
+
+D:\MyCodes\test>for /d %i in (*) do (echo %i)
+
+D:\MyCodes\test>(echo testdir01 )
+testdir01
+
+D:\MyCodes\test>(echo testdir02 )
+testdir02
+
+D:\MyCodes\test>(echo testdir03 )
+testdir03
+
+D:\MyCodes\test>for /d /r %i in (*) do (echo %i)       // '/d'与'/r'联合使用遍历所有文件夹
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir01 )
+D:\MyCodes\test\testdir01
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir02 )
+D:\MyCodes\test\testdir02
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir03 )
+D:\MyCodes\test\testdir03
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir01\test01dir )
+D:\MyCodes\test\testdir01\test01dir
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir03\test03dir )
+D:\MyCodes\test\testdir03\test03dir
+
+D:\MyCodes\test>(echo D:\MyCodes\test\testdir03\test03dir\hahah )
+D:\MyCodes\test\testdir03\test03dir\hahah
 
 ```
 
