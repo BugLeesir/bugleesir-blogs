@@ -495,6 +495,20 @@ hello
 world
 ```
 
+* ``<``重定向符
+
+作用：从文件中而不是从键盘中读入命令输入。
+
+语法：
+
+```bat
+set /p var1=<test.txt  @rem 将从stdin输入重定向为从文件输入
+echo %var1%
+Hello world
+
+//文件test.txt中的内容为Hello world
+```
+
 ### Part6---常用技巧
 
 #### 1,获取管理员权限
