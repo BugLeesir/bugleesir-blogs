@@ -20,3 +20,7 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :runa
 set /p path=请输入refind_x64.efi文件的路径
 bcdedit /set {bootmgr} path %path%
 ```
+
+* 调整启动项顺序
+
+[BooTice](https://pan.baidu.com/s/1whGeyNYI9hqA9tkcaE0ncA?pwd=kefi)
