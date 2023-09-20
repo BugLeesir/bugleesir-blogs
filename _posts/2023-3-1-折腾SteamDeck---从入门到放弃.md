@@ -37,9 +37,9 @@ bcdedit /set {bootmgr} path %path%
 
 按电源键切换到 Desktop 桌面模式
 
-打开 Konsole，输入 curl -L <http://dl.ohmydeck.net> | sh 安装 Plugin Loader
+打开 Konsole，输入`curl -L http://dl.ohmydeck.net | sh`安装 Plugin Loader
 
-输入 curl -L <http://i.ohmydeck.net> | sh 安装 Tomoon
+输入`curl -L http://i.ohmydeck.net | sh`安装 Tomoon
 
 切换回到 Gamming 游戏模式，按下右侧摇杆下的快捷按钮（三个点的按钮），可以看到多了一个 Decky 插件面板
 
