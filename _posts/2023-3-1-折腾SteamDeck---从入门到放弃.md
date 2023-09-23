@@ -54,3 +54,9 @@ bcdedit /set {bootmgr} path %path%
 注意：若是订阅链接过长可以使用短域名缩短服务，如 t.ly n9.cl.
 
 别忘了在缩短后的链接前面加 http(s)://，形如 <https://n9.cl/abcdef> 才是有效的订阅链接
+
+#### 3、SteamOS更新之后读写权限失效
+
+打开shell输入以下命令
+
+`sudo steamos-readonly disable`
