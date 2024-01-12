@@ -3,20 +3,20 @@ layout : article
 title : "Windows批处理教程"
 ---
 
-- [前言—为什么要写这个教程](#前言---为什么要写这个教程)
-- [序言—何为批处理？](#序言---何为批处理)
-- [Part1—初识批处理程序](#part1---初识批处理程序)
-- [Part2—常用命令](#part2---常用命令)
-- [Part3—变量](#part3---变量)
-- [Part4—符号拓展](#part4---符号拓展)
-- [Part5—常用特殊符号](#part5---常用特殊符号)
-- [Part6—常用技巧](#part6---常用技巧)
+- [前言—为什么要写这个教程](#前言-为什么要写这个教程)
+- [序言—何为批处理？](#序言-何为批处理)
+- [Part1—初识批处理程序](#part1-初识批处理程序)
+- [Part2—常用命令](#part2-常用命令)
+- [Part3—变量](#part3-变量)
+- [Part4—符号拓展](#part4-符号拓展)
+- [Part5—常用特殊符号](#part5-常用特殊符号)
+- [Part6—常用技巧](#part6-常用技巧)
 
-### 前言---为什么要写这个教程
+### 前言-为什么要写这个教程
 
 本人是计算机专业的一名大学牲，一直以来对Windows的批处理程序很感兴趣，但是网上又没有很合适的教程可以进行学习，于是我就决定在我学习批处理的过程中编写一份教程，既是为了让自己忘了的时候能重新想起自己学了什么，也为了让更多的人了解Windows批处理这一强大的功能。
 
-### 序言---何为批处理？
+### 序言-何为批处理？
 
 - 批处理(Batch)，也称为批处理脚本，扩展名为.bat或者.cmd。
 
@@ -28,7 +28,7 @@ title : "Windows批处理教程"
 
 **[Microsoft官方命令指南](https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/windows-commands)**
 
-### Part1---初识批处理程序
+### Part1-初识批处理程序
 
 ```bat
 @echo off
@@ -52,7 +52,7 @@ pause
 **[mklink命令的使用](https://bugleesir.github.io/2022/10/20/mklink%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8.html)**
 中提到的符号链接的功能，可以将一些强制安装在C盘的流氓软件移动到别的磁盘，节省电脑的C盘空间。
 
-### Part2---常用命令
+### Part2-常用命令
 
 - (command)/?
 
@@ -256,7 +256,7 @@ call [:<label> [<arguments>]]
 如果启用了命令扩展，call 将接受 <label> 作为调用的目标。 正确的语法为 call :<label> <arguments>。
 ```
 
-### Part3---变量
+### Part3-变量
 
 - set
 
@@ -424,7 +424,7 @@ D:\MyCodes\test\testdir03\test03dir\hahah
 
 #### 用法8---setlocal [Enable|Disable]DelayedExpansion
 
-### Part4---符号拓展
+### Part4-符号拓展
 
 扩充变量语法详解：
 
@@ -469,7 +469,7 @@ MySQL.lnk
 
 ```
 
-### Part5---常用特殊符号
+### Part5-常用特殊符号
 
 - @ 命令行回显屏蔽符号
 
@@ -518,7 +518,7 @@ Hello world
 //文件test.txt中的内容为Hello world
 ```
 
-### Part6---常用技巧
+### Part6-常用技巧
 
 #### 1,获取管理员权限
 
