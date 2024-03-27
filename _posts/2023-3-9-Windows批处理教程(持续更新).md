@@ -32,17 +32,28 @@ title : "Windows批处理教程"
 
 ```bat
 @echo off
+setlocal enabledelayedexpansion
+chcp 65001
 echo "请输入需要移动的文件/文件夹的绝对路径"
 set /P source=
 echo "请输入转移目标位置的绝对路径"
 set /P target=
-cd %source%
-xcopy * %target% /H /E /Y
+if exist %source%\ (
 for %%I in (%source%) do set temp=%%~nI
-cd ..
-rd/s/q %temp%
-mklink /D "%source%" "%target%"
+echo !temp!
+echo %target%\!temp!
+md %target%\!temp!
+xcopy %source% %target%\!temp! /H /E /Y
+rd %source% /s/q
+mklink /D "%source%" "%target%\!temp!"
 pause
+) else (
+for %%I in (%source%) do set temp=%%~nxI
+copy %source% %target%
+del %source%
+mklink %source% %target%\!temp!
+pause
+)
 @REM 作者BugLeesir
 ```
 
