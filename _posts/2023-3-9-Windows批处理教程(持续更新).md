@@ -60,7 +60,7 @@ pause
 先看上面这个我编写的批处理程序，本教程将从这个程序出发带领大家初识Windows批处理
 
 这个批处理程序实现了我博客中
-**[mklink命令的使用](https://bugleesir.github.io/2022/10/20/mklink%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8.html)**
+**[mklink命令的使用](https://bugleesir.github.io/bugleesir-blogs/2022/10/20/mklink%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8.html)**
 中提到的符号链接的功能，可以将一些强制安装在C盘的流氓软件移动到别的磁盘，节省电脑的C盘空间。
 
 ### Part2-常用命令
