@@ -175,7 +175,7 @@ GOTO会点编程的朋友就会知道这是跳转的意思。
 
 例：
 
-```shell
+```bat
 @echo off
 :start
 set /a var+=1
@@ -211,7 +211,7 @@ Type \[drive:\]\[path\]filename | find /c #显示文件行数
 
 例：
 
-```shell
+```bat
 @echo off 
 echo 111 >test.txt
 echo 222 >test.txt
@@ -227,7 +227,7 @@ pause
 
 例：
 
-```shell
+```bat
 @echo off
 echo 111 >test.txt
 echo 222 >>test.txt
@@ -274,7 +274,7 @@ ftype exefile=\\"%1\\" %\*
 
 切换当前目录
 
-```shell
+```bat
 @echo off
 c: cd\\ & md mp3
 md d:\\mp4
@@ -320,7 +320,7 @@ CALL :label arguments
 
 例：
 
-```shell
+```bat
 @echo off
 
 Echo 产生一个临时文件 > tmp.txt
@@ -407,7 +407,7 @@ IF ERRORLEVEL这个句子必须放在某一个命令的后面，执行命令后�
 Number的数字取值范围0~255，判断时值的排列顺序应该由大到小。返回的值大于等于指定的值时，条件成立  
 例：
 
-```shell
+```bat
 @echo off
 
 dir c:
@@ -466,7 +466,7 @@ IF not EXIST autoexec.bat echo 文件不存在！
 为了更好的说明问题，我们先引入一个例子。  
 例1:
 
-```shell
+```bat
 @echo off
 set a=4
 set a=5 echo %a%
@@ -482,7 +482,7 @@ pause
 
 例2:
 
-```shell
+```bat
 @echo off
 setlocal enabledelayedexpansion
 set a=4
@@ -497,7 +497,7 @@ pause
 再举一个例子巩固一下。  
 例3:
 
-```shell
+```bat
 @echo off
 setlocal enabledelayedexpansion
 for /l %%i in (1,1,5) do (
@@ -527,7 +527,7 @@ ECHO 处于关闭状态。
 提示：在没有开启变量延迟的情况下，某条命令行中的变量改变，必须到下一条命令才能体现。这一点也可以加以利用，看例子。  
 例：交换两个变量的值，且不用中间变量
 
-```shell
+```bat
 @echo off
 
 ::目的：交换两个变量的值，但是不使用临时变量
@@ -646,7 +646,7 @@ world
 这三个命令也是管道命令，但它们一般不常用，你只需要知道一下就ok了，当然如果想仔细研究的话，可以自己查一下资料。(本人已查过，网上也查不到相关资料)  
 <，输入重定向命令，从文件中读入命令输入，而不是从键盘中读入。
 
-```shell
+```bat
 @echo off
 echo 2005-05-01>temp.txt
 date <temp.txt
@@ -668,7 +668,7 @@ del temp.txt
 其中的stdin可被<重定向，stdout可被>、>>重定向。  
 我们已经知道读取文本中的内容可以用for命令，但如果只需要读取第一行用for命令就有点麻烦。简单的办法如下:
 
-```shell
+```bat
 @echo off
 set /p str=<%0
 echo %str%
@@ -704,7 +704,7 @@ echo y|format a: /s /q /v:system
 另外，此转义字符还可以用作续行符号。  
 举个简单的例子：
 
-```shell
+```bat
 @echo off
 
 echo 英雄^
@@ -954,7 +954,7 @@ usebackq- 使用后引号（键盘上数字1左面的那个键\`）。
 
 For命令例1：
 
-```shell
+```bat
 @echo off
 
 rem 首先建立临时文件test.txt
@@ -986,7 +986,7 @@ delims=,- （减号后有一空格）以逗号减号和空格为分隔符，空�
 
 For命令例2：
 
-```shell
+```bat
 @echo off
 
 FOR /F \"eol= delims=\" %%i in (test.txt) do echo %%i
@@ -1000,7 +1000,7 @@ For命令例3：
 
 另外/F参数还可以以输出命令的结果看这个例子
 
-```shell
+```bat
 @echo off
 
 FOR /F \"delims=\" %%i in (
@@ -1237,7 +1237,7 @@ copy d:\\\\1.bat \\"%USERPROFILE%\\\\「开始」菜单\\\\程序\\\\启动\\\\\
 反回批处理参数?到底怎么个返回法?  
 我们看这个例子,把下面的代码保存为test.BAT然后放到C盘下
 
-```shell
+```bat
 @echo off
 
 echo %1 %2 %3 %4
@@ -1315,7 +1315,7 @@ var为变量名,=号右变的是要给变量的值
 如果我们想让用户手工输入变量的值,而不是在代码里指定,可以用用set命令的/p参数  
 例子:
 
-```shell
+```bat
 @echo off
 set /p var=请输入变量的值
 echo %var%
@@ -1343,7 +1343,7 @@ SET variable=
 
 例子:
 
-```shell
+```bat
 @echo off
 set var=我是值
 echo %var%
@@ -1359,7 +1359,7 @@ SET /P variable=\[promptString\]
 
 例子:
 
-```shell
+```bat
 @echo off
 set /p var=请输入变量的值:
 echo 您输入了 %var%~_~
@@ -1411,7 +1411,7 @@ set的/A参数就是让SET可以支持数学符号进行加减等一些数学运
 > set /a aa=1%aa%-10000  
 > echo %aa%
 
-```shell
+```bat
 @echo off
 set /p input=请输入计算表达式：
 set /a var=%input%
@@ -1474,7 +1474,7 @@ set /a var= 4 \\">>\\" 2右移位运算，4的二进制为100，右移动2位为
 思考题：求2的n次方  
 参考答案：
 
-```shell
+```bat
 @echo off
 set /p n=请输入2的几次方:
 set /a num=1^<^<n
@@ -1501,7 +1501,7 @@ pause
 上面语法的意思就是：将字符串变量%PATH%中的str1替换为str2  
 这个是替换变量值的内容,看例子
 
-```shell
+```bat
 @echo off
 set a= bbs. verybat. cn
 echo 替换前的值: \"%a%\"
@@ -1517,7 +1517,7 @@ pause
 %PATH:str1=str2%这个操作就是把变量%PATH%的里的str1全部用str2替换  
 比如我们把上面的例子改成这样
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 echo 替换前的值: \"%a%\"
@@ -1537,7 +1537,7 @@ set是命令 var是变量名 字a是要进行字符替换的变量的值,\\".\\"
 请注意：字符串的替换和截取功能在引用变量的地方均可以，并不一定必须要有set命令  
 例：
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 echo 替换前的值: \"%a%\"
@@ -1557,7 +1557,7 @@ pause
 %PATH:~10,5%这个什么意思,看例子:  
 截取功能例子1：
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 set var=%a:~1,2%
@@ -1579,7 +1579,7 @@ set是命令，var是变量值，a要进行字符操作的变量，\\"1\\"从变
 %PATH:~-10% 看例子  
 截取功能例子2：
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 set var=%a:~-3%
@@ -1592,7 +1592,7 @@ pause
 当然我们也可以改成这样  
 截取功能例子3：
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 set var=%a:~3%
@@ -1605,7 +1605,7 @@ pause
 %PATH:~0,-2%例子  
 截取功能例子4：
 
-```shell
+```bat
 @echo off
 set a=bbs.verybat.cn
 set var=%a:~0,-3%
@@ -1619,7 +1619,7 @@ pause
 如果改成这样  
 截取功能例子5：
 
-```shell
+```bat
 @echo off
 set a=bbs.wuyou.com
 set var=%a:~2,-3%
@@ -1648,7 +1648,7 @@ a=bbs.wuyou.com%a:~1,2% ＝“bs” 偏移量1，从第二位开始向右取2位
 思考题目：输入任意字符串，求字符串的长度  
 参考答案：
 
-```shell
+```bat
 @echo off
 
 set /p str=请输入任意长度的字符串:
@@ -1727,7 +1727,7 @@ echo filename missing
 一般上一条命令的执行结果代码只有两结果,\\"成功\\"用0表示\\"失败\\"用1表示.  
 举个例子:
 
-```shell
+```bat
 @echo off
 net user
 IF %ERRORLEVEL% == 0 echo net user 执行成功了!
@@ -1757,7 +1757,7 @@ if errorlevel 0 echo文件复制没有错误。
 补充完毕。  
 再举几个例子给新手理解
 
-```shell
+```bat
 @echo off
 net usertest
 IF %ERRORLEVEL% == 1 echo net user 执行失败了!
@@ -1766,7 +1766,7 @@ pause
 
 这个是判断上一条命令是否执行失败的
 
-```shell
+```bat
 @echo off
 
 set /p var=随便输入个命令:
@@ -1796,7 +1796,7 @@ pause
 
 在来一个简化版的
 
-```shell
+```bat
 @echo off
 
 set /p var=随便输入个命令:
@@ -1836,7 +1836,7 @@ pause
 这个呢就是用来比较变量或者字符的值是不是相等的.  
 例子
 
-```shell
+```bat
 @echo off
 
 set /p var=请输入第一个比较字符:
@@ -1851,7 +1851,7 @@ pause
 上面这个例子可以判断你输入的值是不是相等,但是你如果输入相同的字符,但是如果其中一个后面打了一个空格,  
 这个例子还是会认为相等,如何让有空格的输入不相等呢?我们在比较字符上加个双引号就可以了.
 
-```shell
+```bat
 @echo off
 
 set /p var=请输入第一个比较字符:
@@ -1868,7 +1868,7 @@ pause
 这个就是判断某个文件或者文件夹是否存在的语法  
 例子
 
-```shell
+```bat
 @echo off
 if exist \"c:\\test\" (echo 存在文件) ELSE echo 不存在文件
 pause
@@ -1879,7 +1879,7 @@ pause
 另外我们看到每条IF用法后都有个\[NOT\]语句,这啥意思?其他加上他的话,就表示先判断我们的条件不成立时,  
 没加他默认是先判断条件成立时,比如上面这个例子
 
-```shell
+```bat
 @echo off
 if not exist \"c:\\test\" (echo 存在文件) ELSE echo 不存在文件
 pause
@@ -1888,7 +1888,7 @@ pause
 加个NOT,执行后有什么结果,如果你的C盘下根本就没c:\\\\test,他还是会显示\\"存在文件\\",这就表示了加了NOT就  
 会先判断条件失败!懂了吧,上面例子改成这样就正确了!
 
-```shell
+```bat
 @echo off
 if not exist \"c:\\test\" (echo 不存在文件) ELSE echo 存在文件
 pause
@@ -1922,7 +1922,7 @@ if defined aa (echo 变量aa存在) else (echo 变量aa不存在)
 
 例：
 
-```shell
+```bat
 @echo off
 if a == A (echo 我们相等) ELSE echo 我们不相等
 pause
@@ -1931,7 +1931,7 @@ pause
 执行后会显示：我们不相等  
 例：
 
-```shell
+```bat
 @echo off
 if /i a == A (echo 我们相等) ELSE echo 我们不相等
 pause
@@ -1947,7 +1947,7 @@ GTR - 大于
 GEQ - 大于或等于  
 我就举一个例子,大家都懂数学...不讲多了  
 
-```shell
+```bat
 @echo off
 
 set /p var=请输入一个数字:
@@ -1965,7 +1965,7 @@ pause
 
 没啥说的，看看高手设计的菜单界面吧：
 
-```shell
+```bat
 @echo off
 
 cls
@@ -2102,7 +2102,7 @@ commandn
 利用goto语句和条件判断，dos可以实现条件循环，很简单啦，看例子：  
 例：
 
-```shell
+```bat
 @echo off
 
 set var=0
@@ -2126,7 +2126,7 @@ pause
 
 例：
 
-```shell
+```bat
 @echo off
 
 set var=100
@@ -2167,7 +2167,7 @@ goto :eof
 传至子程序的参数在call语句中指定，在子程序中用%1、%2至%9的形式调用，而子程序返回主程序的数据只需在调用结束后直接引用就可以了，当然也可以指定返回变量，请看下面的例子。  
 子程序例1：
 
-```shell
+```bat
 @echo off
 call :sub return 你好
 echo 子程序返回值：%return%
@@ -2181,7 +2181,7 @@ goto :eof
 
 子程序例2：设计一个求多个整数相加的子程序
 
-```shell
+```bat
 @echo off
 
 set sum=0
@@ -2328,7 +2328,7 @@ FileName，这样就会在同一目录下生成一个名为FileNme.com的可执�
 1、利用ping命令延时  
 例：
 
-```shell
+```bat
 @echo off
 echo 延时前：%time%
 ping /n 3 127.0.0.1 >nul
@@ -2340,7 +2340,7 @@ pause
 2、利用for命令延时  
 例：
 
-```shell
+```bat
 @echo off
 echo 延时前：%time%
 for /l %%i in (1,1,5000) do echo %%i>nul
@@ -2354,7 +2354,7 @@ pause
 
 例：
 
-```shell
+```bat
 @echo off
 
 echo %time%
@@ -2389,7 +2389,7 @@ goto :eof
 仅用批处理命令就可以实现延迟操作。  
 例：  
 
-```shell
+```bat
 @echo off
 
 set /p delay=请输入需延迟的毫秒数：
@@ -2447,7 +2447,7 @@ pause
 经测试，当延迟时间大于500毫秒时，上面的延迟程序一般不存在误差。当延迟时间小于500毫秒时，可能有几十毫秒误差，为什么？因为延迟程序本身也是有运行时间的，同时系统时间只能精确到10毫秒。  
 为了方便引用，可将上面的例子改为子程序调用形式：  
 
-```shell
+```bat
 @echo off
 
 echo 程序开始时间：%Time%
@@ -2501,7 +2501,7 @@ goto :eof
 
 下面给出一个模拟进度条的程序。如果将它运用在你自己的程序中，可以使你的程序更漂亮。  
 
-```shell
+```bat
 @echo off
 
 mode con cols=113 lines=15 color 9f
@@ -2544,7 +2544,7 @@ C:>ECHO ^G>temp.txt
 利用退格键，可以设计闪烁文字效果  
 例：文字闪烁
 
-```shell
+```bat
 @echo off
 
 :start
@@ -2576,7 +2576,7 @@ goto start
 
 例：输出唐诗一首，每行闪动多次
 
-```shell
+```bat
 @echo off
 
 setlocal enabledelayedexpansion
@@ -2645,7 +2645,7 @@ goto :eof
 那么，如何获取100以内的随机数呢？很简单，将%RANDOM%按100进行求余运算即可，见例子。  
 例：生成5个100以内的随机数
 
-```shell
+```bat
 @echo off
 
 setlocal enabledelayedexpansion
@@ -2675,7 +2675,7 @@ pause
 解答思路：将26个英文字母或10数字以及其它特殊字符组成一个字符串，随机抽取其中的若干字符。  
 参考答案1：（简单）
 
-```shell
+```bat
 @echo off
 
 call :randomPassword 5 pass1 pass2
@@ -2729,7 +2729,7 @@ goto :eof
 
 参考答案2：（最优）
 
-```shell
+```bat
 @echo off
 
 call :randomPassword 6 pass1 pass2 pass3
@@ -2801,7 +2801,7 @@ goto :eof
 什么是命令嵌套呢？简单的说，首先用一条dos命令生成一个字符串，而这个字符串是另一条dos命令，用call语句调用字符串将其执行，从而得到最终结果。  
 例：用call语句实现命令嵌套
 
-```shell
+```bat
 @echo off
 
 set str1=aaa echo ok bbb
