@@ -1,5 +1,5 @@
 ---
-layout : aritcle
+layout : article
 title : "批处理教程(转)"
 ---
 
