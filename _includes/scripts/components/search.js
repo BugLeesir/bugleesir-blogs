@@ -31,7 +31,7 @@
         search.onShow && search.onHide();
         useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
         setTimeout(function() {
-          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          
           search.clear && search.clear();
           window.pageAsideAffix && window.pageAsideAffix.refresh();
         }, 400);
@@ -44,7 +44,7 @@
     // Char Code: 83  S, 191 /
     $(window).on('keyup', function(e) {
       if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
-        modalVisible || searchModal.show();
+        
       }
     });
 
