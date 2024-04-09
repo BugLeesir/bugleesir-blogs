@@ -161,8 +161,8 @@ echo命令的作用列举如下：
 格式：ECHO 答复语|命令文件名  
 上述格式可以用于简化一些需要人机对话的命令（如：CHKDSK／F；FORMAT Drive:；del \*.\*）的操作，它是通过DOS管道命令把ECHO命令输出的预置答复语作为人机对话命令的输入。下面的例子就相当于在调用的命令出现人机对话时输入“Y”回车：
 
-> C:>ECHO Y|CHKDSK/F  
-> C:>ECHO Y|DEL A :\*.\*
+> C:>ECHO Y\|CHKDSK/F  
+> C:>ECHO Y\|DEL A :\*.\*
 
 （7）建立新文件或增加文件内容  
 格式：ECHO 文件内容>文件名  
