@@ -73,7 +73,7 @@
           cur = q[i];
           if (cur.urls.has(url)) {
             qi = cur, val = qi.urls.values();
-            qi && (cbs = qi.callbacks);
+            
             for (flag = true, j = 0; j < val.length; j++) {
               cur = val[j];
               if (!s[cur]) {
@@ -104,8 +104,8 @@
         }
         val = _urls.values();
         if (qi) {
-          callback && (qi.load || qi.callbacks.push(callback));
-          callback && (qi.load && callback());
+          
+          
         } else {
           q.push({
             urls: _urls,
@@ -115,8 +115,8 @@
           for (i = 0; i < val.length; i++) {
             node = null, url = val[i];
             if (s[url] === undefined) {
-              (type === 'js' ) && (node = createNode('script', { src: url }));
-              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              
+              
               if (node) {
                 node.onload = (function(type, url) {
                   return function() {

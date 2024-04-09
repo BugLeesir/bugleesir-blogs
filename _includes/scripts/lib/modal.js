@@ -26,14 +26,14 @@
           scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
           $root.addClass('modal--show');
           $pageMain.scrollTop(scrollTop);
-          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          
           hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
           $window.on('keyup', handleKeyup);
         } else {
-          activeCount > 0 && activeCount--;
+          
           $root.removeClass('modal--show');
           $window.scrollTop(scrollTop);
-          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          
           hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
           $window.off('keyup', handleKeyup);
         }

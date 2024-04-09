@@ -9,10 +9,10 @@
 
       function setOptions(options) {
         var _options = options || {};
-        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
-        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
-        _options.scroll && (scroll = _options.scroll);
-        _options.disabled !== undefined && (disabled = _options.disabled);
+        
+        
+        
+        
         $scrollTarget = $(scrollTarget);
         isOverallScroller = window.isOverallScroller($scrollTarget[0]);
         $scroll = $(scroll);
@@ -83,10 +83,10 @@
             }, 3000);
           });
           $scrollTarget.on('scroll', function() {
-            disabled || setState();
+            
           });
           $window.on('resize', function() {
-            disabled || (calc(true), setState());
+            
           });
           hasInit = true;
         }
