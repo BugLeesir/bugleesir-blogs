@@ -8,11 +8,11 @@
 
       function setOptions(options) {
         var _options = options || {};
-        
-        
-        
-        
-        
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
         $headings = $(container).find(selectors).filter('[id]');
         $scrollTarget = $(scrollTarget);
         $scroller = $(scroller);
@@ -33,7 +33,7 @@
             if (scrollTop >= headingsPos[i]) {
               $activeCur = $tocLi.eq(i);
             } else {
-              
+              $activeCur || ($activeCur = $tocLi.eq(i));
               break;
             }
           }
@@ -80,7 +80,7 @@
             }, 3000);
           });
           $scrollTarget.on('scroll', function() {
-            
+            disabled || setState(null, scrolling);
           });
           $window.on('resize', window.throttle(function() {
             if (!disabled) {

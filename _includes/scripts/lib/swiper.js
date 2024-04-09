@@ -88,9 +88,9 @@
       function move(type) {
         var nextIndex = curIndex, unstableTranslateX;
         if (type === 'prev') {
-          
+          nextIndex > 0 && nextIndex--;
         } else if (type === 'next') {
-          
+          nextIndex < count - 1 && nextIndex++;
         }
         if (type === 'cur') {
           moveToIndex(curIndex, { animation: true });
@@ -165,16 +165,16 @@
             pressing = true; handleTouchstart(e);
           });
           $swiperWrapper.on('mousemove', function(e) {
-            
+            pressing && (e.preventDefault(), moved = true, handleTouchmove(e));
           });
           $swiperWrapper.on('mouseup', function(e) {
-            
+            pressing && (pressing = false, handleTouchend(e));
           });
           $swiperWrapper.on('mouseleave', function(e) {
-            
+            pressing && (pressing = false, handleTouchend(e));
           });
           $swiperWrapper.on('click', function(e) {
-            
+            moved && (e.stopPropagation(), moved = false);
           });
         })();
 

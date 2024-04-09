@@ -83,13 +83,13 @@
         $articles = sectionArticles[i];
         for (j = 0; j < $articles.length; j++) {
           if (tag === '' || tag === undefined) {
-            
+            result[i] || (result[i] = {});
             result[i][j] = true;
           } else {
             var tags = $articles.eq(j).data('tags').split(',');
             for (k = 0; k < tags.length; k++) {
               if (tags[k] === tag) {
-                
+                result[i] || (result[i] = {});
                 result[i][j] = true; break;
               }
             }
@@ -99,7 +99,7 @@
 
       for (i = 0; i < sectionArticles.length; i++) {
         result[i] && $sections.eq(i).removeClass('d-none');
-        
+        result[i] || $sections.eq(i).addClass('d-none');
         for (j = 0; j < sectionArticles[i].length; j++) {
           if (result[i] && result[i][j]) {
             sectionArticles[i].eq(j).removeClass('d-none');
@@ -109,7 +109,7 @@
         }
       }
 
-      
+      hasInit || ($result.removeClass('d-none'), hasInit = true);
 
 
       if (target) {

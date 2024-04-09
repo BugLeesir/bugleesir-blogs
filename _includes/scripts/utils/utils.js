@@ -32,7 +32,7 @@
     });
     return {
       then: function(cb) {
-        
+        cb && (loaded ? cb() : (cbs.push(cb)));
       }
     };
   })();
