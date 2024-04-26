@@ -15,16 +15,18 @@ title: "Visual Studio快捷键大全"
 
 ### 项目相关的快捷键
 
-|Ctrl + Shift + B|  生成项目|
+| 按键 | 功能 |
 | --- | --- |
+|Ctrl + Shift + B|  生成项目|
 |Ctrl + Alt + L|  显示Solution Explorer（解决方案资源管理器）|
 |Shift + Alt+ C|  添加新类|
 |Shift + Alt + A|  添加新项目到项目|
 
 ### 编辑相关的键盘快捷键
 
-|Ctrl + Enter|  在当前行插入空行|
+| 按键 | 功能 |
 | --- | --- |
+|Ctrl + Enter|  在当前行插入空行|
 |Ctrl + Shift + Enter|  在当前行下方插入空行|
 |Ctrl +空格键|  使用IntelliSense（智能感知）自动完成|
 |Alt + Shift +箭头键(←,↑,↓,→)|  选择代码的自定义部分|
@@ -40,16 +42,18 @@ title: "Visual Studio快捷键大全"
 
 ### 导航相关的键盘快捷键
 
-|Ctrl +Up/Down|  滚动窗口但不移动光标|
+| 按键 | 功能 |
 | --- | --- |
+|Ctrl +Up/Down|  滚动窗口但不移动光标|
 |Ctrl + -|  让光标移动到它先前的位置|
 |Ctrl ++|  让光标移动到下一个位置|
 |F12|  转到定义|
 
 ### 调试相关的键盘快捷键
 
-|Ctrl + Alt + P|  附加到进程|
+| 按键 | 功能 |
 | --- | --- |
+|Ctrl + Alt + P|  附加到进程|
 |F10|  调试单步执行|
 |F5|  开始调试|
 |Shift + F5|  停止调试|
@@ -58,8 +62,9 @@ title: "Visual Studio快捷键大全"
 
 ### 搜索相关的键盘快捷键
 
-|Ctrl + K  Ctrl + K|  将当前行添加书签|
+| 按键 | 功能 |
 | --- | --- |
+|Ctrl + K  Ctrl + K|  将当前行添加书签|
 |Ctrl + K  Ctrl + N|  导航至下一个书签|
 |Ctrl + .|  如果你键入一个类名如`Collection<string>`，且命名空间导入不正确的话，那么这个快捷方式组合将自动插入导入|
 |Ctrl + Shift + F|  在文件中查找|
