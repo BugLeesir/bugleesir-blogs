@@ -173,4 +173,4 @@ Moonlight 是一个开源的串流客户端，最初是为 NVIDIA GameStream 设
 
 - 1、前往[moonlight官网](https://moonlight-stream.org/)下载对应操作系统的安装包
 - 2、输入公网服务器地址进行连接
-- 3、被控端输入匹配码进行匹配即
+- 3、被控端输入匹配码进行匹配即可
